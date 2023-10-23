@@ -1,5 +1,5 @@
 # Pull base image
-FROM python:3.11-slim-buster
+FROM python:3.12-slim-buster
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -14,8 +14,7 @@ COPY requirements.txt /tmp/requirements.txt
 
 RUN set -ex && \
     pip install --upgrade pip && \
-    pip install -r /tmp/requirements.txt && \
-    rm -rf /root/.cache/
+    pip install -r /tmp/requirements.txt
 
 # Copy local project
 COPY . /code/
