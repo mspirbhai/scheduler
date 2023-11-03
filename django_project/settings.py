@@ -31,10 +31,12 @@ INSTALLED_APPS = [
     # Local
     "accounts",
     "pages",
+    "scheduler",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
+    "kolo.middleware.KoloMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",  # WhiteNoise
     "django.contrib.sessions.middleware.SessionMiddleware",
